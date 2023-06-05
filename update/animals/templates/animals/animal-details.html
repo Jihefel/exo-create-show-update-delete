@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<img src="{{animal.photo}}" alt="" width="200px">
-<p> {{animal.species}} - {{animal.sex}} - {{animal.age}} ans </p>
+<div class="animal">
+    <img src="{{animal.photo}}" alt="" width="200px">
+    <p>
+    {{animal.species}} - {{animal.sex}} - {{animal.age}} ans 
+        <a href={% url 'update' animal.id %}>
+            <i class="fa-solid fa-pen-to-square"></i>
+        </a>
+        <a href={% url 'delete' animal.id %}>
+            <i class="fa-solid fa-trash-can"></i>
+        </a>
+    </p>
+</div>
 {% endblock content %}
